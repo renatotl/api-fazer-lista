@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API fazer-lista M4-P1",
+    "description": "API para o primeiro pj do react",
+    "termsOfService": "",
+    "contact": {
+      "email": "renatotl/github"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/agendas",
+      "description": "API de teste"
+    },
+    {
+      "url": "https://apai-mario-m3p3.herokuapp.com/characters/All-Characters",
+      "description": "API de produção"
+    }
+  ],
+  "path": {
+    "/one-agenda/": {
+      "get": {
+        "summary": "Busca um agenda pelo ID",
+        "description": "Rota responsável por buscar um agenda pelo ID",
+        "tags": ["Agendas"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do agenda para a busca",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Agenda"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Agenda": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "Number"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
