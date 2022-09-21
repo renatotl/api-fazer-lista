@@ -10,9 +10,11 @@ route.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 
 
-route.get('/one-agenda/',controllerAgenda.findAgendaByIdController);
-
-
+route.get('/one-agenda/id',controllerAgenda.findAgendaByIdController);
+route.post('/create-agenda',controllerAgenda.createAgendaController);
+route.delete('/delete-agendas/id',controllerAgenda.deleteAgendaController);
 
 
 module.exports = route;
+
+

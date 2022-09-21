@@ -20,7 +20,47 @@
     }
   ],
   "path": {
-    "/one-agenda/": {
+    "/create-agenda": {
+      "POST": {
+        "summary": "Criar tarefa",
+        "description": "Rota responsável por criar uma tarefa",
+        "tag": ["Agendas"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Agenda"
+              },
+              "examples": {
+                "Agebdas": {
+                  "value": {
+                    "id": 1,
+                    "text": "Olá, mundo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Agenda"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/one-agenda/{id}": {
       "get": {
         "summary": "Busca um agenda pelo ID",
         "description": "Rota responsável por buscar um agenda pelo ID",
@@ -48,6 +88,29 @@
               }
             }
           }
+        }
+      }
+    }
+  },
+  "/delete-agendas/{id}": {
+    "delete": {
+      "summary": "Apagar uma tarefa  pelo ID",
+      "description": "Rota responsável por apagar uma tarefa pelo ID",
+      "tags": ["Agenda"],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "Id da agenda para deleção",
+          "required": true
+        }
+      ],
+      "responses": {
+        "400": {
+          "description": "Bad Request"
+        },
+        "200": {
+          "description": "OK"
         }
       }
     }

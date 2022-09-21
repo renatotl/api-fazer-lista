@@ -7,8 +7,14 @@ const findAgendaByIdServicer = async (idParams) => {
   return agenda;
 };
 
+const createAgendaService = async (newAgenda) => {
+  const agendaCreated = await Agenda.create(newAgenda);
+  return agendaCreated;
+};
 
-
+const deleteAgendaService = async (id) => {
+  return await Agenda.findByIdAndDelete(id);
+};
 
 
 
@@ -16,5 +22,7 @@ const findAgendaByIdServicer = async (idParams) => {
 module.exports = {
 
     findAgendaByIdServicer,
+    createAgendaService,
+    deleteAgendaService
 
 };
