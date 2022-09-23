@@ -1,6 +1,9 @@
 const Agenda = require('../models/Agenda');
 
-
+const findAllAgendasService = async () => {
+  const agendas = await Agenda.find();
+  return agendas;
+};
 
 const findAgendaByIdServicer = async (idParams) => {
   const agenda = await Agenda.findById(idParams);
@@ -23,6 +26,7 @@ module.exports = {
 
     findAgendaByIdServicer,
     createAgendaService,
-    deleteAgendaService
+    deleteAgendaService,
+    findAllAgendasService
 
 };
