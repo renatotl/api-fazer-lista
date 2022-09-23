@@ -15,7 +15,7 @@
       "description": "API de teste"
     },
     {
-      "url": "https://apai-mario-m3p3.herokuapp.com/characters/All-Characters",
+      "url": "https://api-fazer-lista-react.onrender.com/agendas",
       "description": "API de produção"
     }
   ],
