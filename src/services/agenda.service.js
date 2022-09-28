@@ -10,7 +10,7 @@ const findAgendaByIdServicer = async (idParams) => {
  // const agenda = await Agenda.findById(idParams);
 
  //esse code eu uso o id mesmo
- const agenda = await Agenda.findOne({id:paramId})
+ const agenda = await Agenda.findOne({id:idParams})
   return agenda;
 };
 
