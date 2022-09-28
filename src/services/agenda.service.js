@@ -6,7 +6,11 @@ const findAllAgendasService = async () => {
 };
 
 const findAgendaByIdServicer = async (idParams) => {
-  const agenda = await Agenda.findById(idParams);
+  //o findById é uma função do mongo e traz a HASH
+ // const agenda = await Agenda.findById(idParams);
+
+ //esse code eu uso o id mesmo
+ const agenda = await Agenda.findOne({id:paramId})
   return agenda;
 };
 
@@ -16,10 +20,13 @@ const createAgendaService = async (newAgenda) => {
 };
 
 const deleteAgendaService = async (id) => {
-  return await Agenda.findByIdAndDelete(id);
+// esse code verifica pelo hash
+ // return await Agenda.findByIdAndDelete(id);
+// verificando por id mesmo
+  return await Agenda.findByIdAndDelete({id: id});
 };
 
-
+//return await Agenda.findOneAndUpdate({id : id});
 
 
 module.exports = {
