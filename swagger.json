@@ -24,7 +24,7 @@
       "POST": {
         "summary": "Criar tarefa",
         "description": "Rota responsável por criar uma tarefa",
-        "tag": ["Agendas"],
+        "tags": ["Agendas"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -32,7 +32,7 @@
                 "$ref": "#/components/schemas/Agenda"
               },
               "examples": {
-                "Agebdas": {
+                "Agendas": {
                   "value": {
                     "id": 1,
                     "text": "Olá, mundo"
@@ -90,41 +90,42 @@
           }
         }
       }
-    }
-  },
-  "/delete-agendas/{id}": {
-    "delete": {
-      "summary": "Apagar uma tarefa  pelo ID",
-      "description": "Rota responsável por apagar uma tarefa pelo ID",
-      "tags": ["Agenda"],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "Id da agenda para deleção",
-          "required": true
-        }
-      ],
-      "responses": {
-        "400": {
-          "description": "Bad Request"
-        },
-        "200": {
-          "description": "OK"
+    },
+
+    "/delete-agendas/{id}": {
+      "delete": {
+        "summary": "Apagar uma tarefa  pelo ID",
+        "description": "Rota responsável por apagar uma tarefa pelo ID",
+        "tags": ["Agenda"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id da agenda para deleção",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "200": {
+            "description": "OK"
+          }
         }
       }
-    }
-  },
-  "components": {
-    "schemas": {
-      "Agenda": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "Number"
-          },
-          "text": {
-            "type": "string"
+    },
+    "components": {
+      "schemas": {
+        "Agenda": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "Number"
+            },
+            "text": {
+              "type": "string"
+            }
           }
         }
       }

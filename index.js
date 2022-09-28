@@ -8,10 +8,9 @@ const connectToDataBase = require('./src/database/database');
 
 connectToDataBase();
 
+app.use(cors());// o cors deixamos encima das rotas para não dar problema com o front
 app.use(express.json());
-
 app.use('/agendas', route);
-app.use(cors());
 
 app.listen(port, () => {
   console.log(`Serve work on http://localhost:${port}`);
