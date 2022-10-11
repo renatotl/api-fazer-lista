@@ -28,12 +28,17 @@ const deleteAgendaService = async (id) => {
 
 //return await Agenda.findOneAndUpdate({id : id});
 
+const updateAgendaService = async (id, agenda) => {
+  return await Agenda.findOneAndUpdate(id,agenda);// primeiro parâmetro é o do banco o segundo o digitado
+
+};
 
 module.exports = {
 
     findAgendaByIdServicer,
     createAgendaService,
     deleteAgendaService,
-    findAllAgendasService
+    findAllAgendasService,
+    updateAgendaService
 
 };

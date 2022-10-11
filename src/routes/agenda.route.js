@@ -13,6 +13,7 @@ route.get('/all-agendas',controllerAgenda.findAllAgendasController)
 route.get('/one-agenda/:id',controllerAgenda.findAgendaByIdController);
 route.post('/create-agenda',controllerAgenda.createAgendaController);
 route.delete('/delete-agendas/:id',controllerAgenda.deleteAgendaController);
+route.put('/update-agendas/:id',controllerAgenda.updateAgendaController);
 
 
 module.exports = route;

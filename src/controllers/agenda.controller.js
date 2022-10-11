@@ -37,10 +37,19 @@ const findAgendaByIdController = async (req, res) => {
     res.send({ message: 'Agenda was destroyed!' });
   };
 
+
+  const updateAgendaController = async (req,res) => {
+  const idParam = req.params.id;
+  const agendaEditi = req.body;
+  const chosenAgenda = await agendasService.updateAgendaService(idParam,agendaEditi);
+  res.send(chosenAgenda)
+  };
+
   module.exports = {
 
     findAgendaByIdController,
     createAgendaController,
     deleteAgendaController,
-    findAllAgendasController
+    findAllAgendasController,
+    updateAgendaController
   }
