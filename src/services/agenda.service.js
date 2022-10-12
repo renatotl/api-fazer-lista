@@ -20,10 +20,10 @@ const createAgendaService = async (newAgenda) => {
 };
 
 const deleteAgendaService = async (id) => {
-// esse code verifica pelo hash
+  return await Agenda.findByIdAndDelete(id);
+  // esse code verifica pelo hash
  // return await Agenda.findByIdAndDelete(id);
 // verificando por id mesmo
-  return await Agenda.findByIdAndDelete({id: id});
 };
 
 //return await Agenda.findOneAndUpdate({id : id});
