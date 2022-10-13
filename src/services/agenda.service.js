@@ -25,13 +25,15 @@ const deleteAgendaService = async (idParams) => {
   // esse code verifica pelo hash
  // return await Agenda.findByIdAndDelete(id);
 // verificando por id mesmo
-//findByIdAndDelete função do mongo 
+//findByIdAndDelete função do mongo o parametro é a hash
+//findOneAndDelete essa function de fato passamos o id
 };
 
 //return await Agenda.findOneAndUpdate({id : id});
 
 const updateAgendaService = async (id, agenda) => {
   return await Agenda.findOneAndUpdate({id: id}, agenda,{new:true});// primeiro parâmetro é o do banco o segundo o digitado
+  //{new:true} este cara vai nos trazer o nosso item já atualizado
 
 };
 
